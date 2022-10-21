@@ -1,11 +1,19 @@
 import meraki
 import include
 
+"""
+Schreibe ein Skript, dass auf jedem Network mit dem Tag 'Firewall' eine neue Layer 3 Firewall Regel mit deinem 
+Name schreibt. Achtung, die bestehenden Regeln sollen nicht überschrieben werden. Die Default Rule soll nicht 
+kopiert werden.
+Zusatzaufgabe: Erweitere das Skript, dass auch in Networks in denen der Tag nur auf der MX gesetzt ist die 
+Regel erstellt wird.
+"""
+
+
 api = meraki.DashboardAPI(
     api_key=include.API_KEY,
     output_log=False,
     print_console=False
-
 )
 
 networks = api.organizations.getOrganizationNetworks(include.ORGANIZATION_ID)
