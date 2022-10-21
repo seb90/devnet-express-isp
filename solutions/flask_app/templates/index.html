@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>
+        Inventory Overview
+    </title>
+    <link rel="icon" href="/static/images/telekom_logo.jpg">
+    <!--Styling Regeln für die Tabelle in externer CSS Datei-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <h1>Inventory Devices per Organization</h1>
+
+    <!--Für jede Organization (+Daten) im übergebenen Dictionary  -->
+    {% for orga in all_data %}
+        
+        <!--Füge eine Überschrift im Format "Organisationsname (ID:xxxxxx)" ein -->
+        <h2>Organization: {{ orga.name }} (ID:{{ orga.id }})</h2>
+        
+        <!--Prüfe ob Inventargeräte vorhanden sind -->
+        {% if orga.inventory_devices %}
+           
+            <!--Füge die Überschrift "Inventory" ein -->
+            <h3>Inventory</h3>
+            
+            <!--Füge eine Tabelle für die Inventargeräte ein-->
+            <table>
+                
+                <!--Definiere die Kopfzeile-->
+                <tr>
+                    <th>Name</th>
+                    <th>MAC</th>
+                    <th>Serial</th>
+                    <th>Model</th>
+                    <th>Product Type</th>
+                    <th>Claimed At</th>
+                </tr>
+                
+                <!--Definiere die Inhaltszeile pro Gerät-->
+                {% for inventory_device in orga.inventory_devices %}
+                    <tr>
+                        <td>{{ inventory_device.name }}</td>
+                        <td>{{ inventory_device.mac }}</td>
+                        <td>{{ inventory_device.serial }}</td>
+                        <td>{{ inventory_device.model }}</td>
+                        <td>{{ inventory_device.productType }}</td>
+                        <td>{{ inventory_device.claimedAt }}</td>
+                    </tr>
+
+                {% endfor %}
+
+            </table>
+
+        {% else %}
+            
+            <!--Gebe einen Text aus falls keine Geräte verfügbar sind-->
+            <p>No inventory devices available for this organization.</p>
+        
+        {% endif %}
+
+
+        <!--Zusatz: Einbinden der Sensorendaten (Temperatur und Luftfeuchte) auf der Website-->
+        <!--Prüfe ob Sensordaten für die Organisation verfügbar sind -->
+        {% if orga.latest_sensor_data %}
+            
+            <!--Füge die Überschrift "Inventory" ein -->
+            <h3>Sensor Data</h3>
+
+            <!--Füge eine Tabelle für die Sensordaten ein-->
+            <table>
+                <!--Definiere die Kopfzeile-->
+                <tr>
+                    <th>Sensor Serial</th>
+                    <th>Associated Network Name</th>
+                    <th>Humidity</th>
+                    <th>Timestamp</th>
+                    <th>Temperature</th>
+                    <th>Timestamp</th>
+                </tr>
+                
+                <!--Definiere die Inhaltszeile pro Sensor-->                
+                {% for sensor_data in orga.latest_sensor_data %}
+                    <tr>
+                        <td>{{ sensor_data.serial }}</td>
+                        <td>{{ sensor_data.network.name }}</td>
+                        
+                        <!--Für alle "Readings" Sensordaten -->  
+                        {% for reading in sensor_data.readings %}
+                            
+                            <!--Falls es sich um Daten mit der Metric Temperatur handelt--> 
+                            {% if reading.metric == "temperature" %}
+                                <td>{{ reading.temperature.celsius }} celsius </td>
+                            
+                            <!--Falls es sich um Daten mit der Metric Feuchtigkeit handelt--> 
+                            {% elif reading.metric == "humidity" %}
+                                <td>{{ reading.humidity.relativePercentage }} % </td>
+                            {% endif %}
+                            
+                            <td>{{ reading.ts }}</td>
+                            
+                        {% endfor %}
+
+                    </tr>
+
+                {% endfor %}
+
+            </table>
+
+            {% else %}
+            
+            <!--Gebe einen Text aus falls keine Temperatur- oder Feuchtigkeitssensoren verfügbar sind-->
+            <p>No humidity or temperature sensors available for this organization.</p>
+        
+        {% endif %}
+        <!--Zusatz Ende-->
+
+    {% endfor %}
+
+
+</body>
+
+</html>
