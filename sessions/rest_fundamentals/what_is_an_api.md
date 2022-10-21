@@ -1,24 +1,21 @@
-# What is an API?
-So what exactly is an API? The acronym stands for ***A**pplication **P**rogramming **I**nterface*.
+# Was ist eine API?
+Was genau ist eine API? Das Akronym steht für ***A**pplication **P**rogramming **I**nterface*.
 
-Academically speaking an API is 
+Akademisch gesehen ist eine API 
 
-> [...] a set of functions and procedures allowing the creation of applications that access the features or data of […] [an]other service.
+> [...] eine Reihe von Funktionen und Verfahren, die die Erstellung von Anwendungen ermöglichen, die auf die Funktionen oder Daten von [...] [einem] anderen Dienst zugreifen.
 
-In more down to earth terms:
+Um es ganz nüchtern zu formulieren:
+> Es ist eine Möglichkeit für zwei Softwareprogramme, miteinander zu kommunizieren. 
 
-> It’s a way for two pieces of software to talk to each other
+APIs ermöglichen es uns also, dass *Maschinen mit Maschinen sprechen*, anstatt dass Menschen Informationen abrufen und sie dann an die Maschine zurückgeben müssen. Diese Art des Zugangs ermöglicht eine Vielzahl von Anwendungsfällen, von der Überwachung und Automatisierung bis hin zur Bereitstellung völlig neuer Produkte, die auf anderen aufbauen. 
 
-So APIs allow us to have *machines talk to machines* instead of needing humans to retrieve information and then feeding them back to the machine. This kind of access enables a variety of use cases from monitoring and automating to delivering completely new products build on-top of others. 
+In dieser Eigenschaft können APIs einen nicht zu vernachlässigenden Einfluss auf die Innovation haben. Stellen Sie sich vor, jedes Startup müsste seinen eigenen *weltweiten* Kartierungsdienst aufbauen, anstatt bestehende Dienste zu nutzen und sie zu integrieren oder darauf aufzubauen. Wir hätten viel weniger Start-ups und viel weniger Flexibilität und Innovation.
 
-In this capacity, APIs can have an not insignificant impact on innovation. Imagine every startup having to build their own *worldwide* mapping service instead of being able to leverage existing services and integrate or build on top of them. We would have far less startups and far less agility and innovation.
-
-Need to be sold more? For infrastructure, APIs allow us to automate the boring tasks or personalize said infrastructure to deliver a experience that more closer solves a pain point. So API could also be an acronym for *Ability to Personalize Infrastructure* and who doesn't want personalized infrastructure without the added cost of personalizing infrastructure for each and every user? 
-
-So how to implement this technically? We need a standardized way for machines to talk
-that is both easy to use and powerful. This is what the *REST* standard is for and this is also the standard that we will explore in this session.
+Wie lässt sich dies nun technisch umsetzen? Wir brauchen einen standardisierten Weg für die Kommunikation zwischen Maschinen
+die sowohl einfach zu benutzen als auch leistungsfähig ist. Dafür ist der *REST*-Standard gedacht, und mit diesem Standard werden wir uns in dieser Sitzung befassen.
 
 <div align="right">
    
-   [Prev](Readme.md) - [Next](what_is_REST.md)
+   [Zurück](Readme.md) - [Weiter](what_is_REST.md)
 </div>

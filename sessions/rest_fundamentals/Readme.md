@@ -1,11 +1,11 @@
 # REST API Fundamentals
-APIs, short for Application Programming Interfaces, have fundamentally changed the way software interacts with each other. By providing a standardized way on how to interact with another system we can build complex integrations with ease.
+APIs, kurz für Application Programming Interfaces, haben die Art und Weise, wie Software miteinander interagiert, grundlegend verändert. Durch die Bereitstellung einer standardisierten Methode für die Interaktion mit einem anderen System können wir komplexe Integrationen mit Leichtigkeit erstellen.
 
-REST (Representational state transfer) is the most common API framework based on HTTP(S) and an essential part of Programmability. In this section we will provide you with the technical background on REST API as well as a practical introduction on how to consume and use REST APIs with python.
+REST (Representational State Transfer) ist das am weitesten verbreitete API-Framework, das auf HTTP(S) basiert und ein wesentlicher Bestandteil der Programmierbarkeit ist. In diesem Abschnitt werden wir euch den technischen Hintergrund der REST-API sowie eine praktische Einführung in die Nutzung und Verwendung von REST-APIs mit Python geben.
 
-So lets get started!
+Let's get started!
 
 <div align="right">
    
-   [Prev](/sessions/python_three/finish.md) - [Next](what_is_an_api.md)
+   [Zurück](/README.md) - [Weiter](what_is_an_api.md)
 </div>

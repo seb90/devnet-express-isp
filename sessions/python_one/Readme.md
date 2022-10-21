@@ -1,12 +1,12 @@
-# Introduction to Python - Part I
+# Einführung in Python - Part I
 
-Python is one of the most popular programming languages of our time and the powerhouse behind most of Cisco’s API efforts. If there is a Cisco API chances are high that there will be a software development kit for that API in python. 
+Python ist eine der beliebtesten Programmiersprachen unserer Zeit und die treibende Kraft hinter den meisten API-Bemühungen von Cisco. Wenn es eine Cisco-API gibt, ist die Wahrscheinlichkeit groß, dass es ein Softwareentwicklungskit für diese API in Python gibt. 
 
-In part one of this three-parted training we will start from scratch and get familiar with the basic concepts of python like variables, loops and functions.
+Im ersten Teil dieser dreiteiligen Schulung beginnen wir bei Null und machen uns mit den grundlegenden Konzepten von Python wie Variablen, Schleifen und Funktionen vertraut.
 
-So lets get started!
+Let's get started!
 
 <div align="right">
    
-   [Prev](/README.md) - [Next](variables.md)
+   [Zurück](/README.md) - [Weiter](variables.md)
 </div>

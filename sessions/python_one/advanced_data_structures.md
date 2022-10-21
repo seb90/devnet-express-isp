@@ -1,11 +1,11 @@
-# Advanced Data Structures
-So far we have only discussed "simple" variables like strings or integers and these can already be used for many different things. But what if we need some more advanced things? 
+# Fortgeschrittene Datenstrukturen
+Bisher haben wir nur "einfache" Variablen wie Strings oder Integer besprochen, die bereits für viele verschiedene Dinge verwendet werden können. Was aber, wenn wir mehr brauchen? 
 
-* What if we don't know the number of variables? 
-* What if we have a list of variables?
-* What if a function should return more then one variable? 
+* Was ist, wenn wir die Anzahl der Variablen nicht kennen? 
+* Was ist, wenn wir eine Liste von Variablen haben?
+* Was ist, wenn eine Funktion mehr als eine Variable zurückgeben soll? 
 
-We need more advanced data structures that can satisfy this need! 
+Wir brauchen fortschrittlichere Datenstrukturen. 
 
 ## Lists
 

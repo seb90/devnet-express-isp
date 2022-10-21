@@ -1,55 +1,40 @@
-# The Standard Library
+# Python Bibliotheken - Library
+Python hat bereits viele Module an Bord, wenn jedoch komplexere Anwendungen geschrieben werden, kommt man schnell an den Punkt wo weitere Funktionen benötigt werden. Diese lassen sich importieren.
 
-The python programming language is often called *batteries included*. 
-This means that, with the standard installation, a lot of functionality has been 
-provided already.
-
-These pieces of code that can be reused by your script are called **modules**. In this
-section we will have a look at the modules that come included with python, the so-called
-*standard library*.
-
-## Importing Modules and using module functions
-
-In order to use functions developed by other people in modules we will need to import them. 
-In python this is done with the `import` statement. These statements, in theory, can be 
-everywhere in the code but it is good practice to put these at the top of your script. 
+## Modul importieren und verwenden
+Um ein Modul zu importieren wird der Befehl `import` verwendet. Üblicherweiße werden alle Imports ganz oben im Code ausgeführt.
 
 ```python
-
-import test_module
+import random
 ```
 
-Above (non-functioning) code would import the module `test_module`. Assuming that the `test_module` 
-defines a function called `test_function` we could now go ahead and use this function like this:
-
+Mit dem Modul random, kann zum Beispiel eine Zufallszahl erstellt werden. Anschließend wird im Code das Modul aufzurufen, nach einem Punkt, wird die gewünschte Funktion aus dem Modul geladen. Hier ist die jeweilige Dokumentation hilfreich.
 ```python
+import random
+a = random.random()  # zufällige Kommazahl
+b = random.randint(0, 10)  # zufällige int Zahl zwischen Wert 1 und Wert 2.
 
-import test_module
-
-test_module.test_function("This is input")
+print(a)
+print(b)
 ```
 
-Sometimes you only want to import one function from a module instead of loading the entire module. You can also do this using the following snippet. 
-
+Es kann auch nur eine Funktion aus einem Modul geladen werden:
 ```python
-
-from test_module import test_function
+from random import randint
+b = randint(0, 10)
+print(b)
 ```
 
-Calling the `test_function` now works like this:
-
-```python
-
-from test_module import test_function
-
-test_function("This is also input")
-```
-
-With this knowledge, lets explore the standard library and put these imports to good use!
+Ebenso kann ein Modul unter einem anderen Namen geladen werden:
+````python
+import random as r
+b = r.randint(0, 10)
+print(b)
+````
 
 <div align="right">
    
-   [Prev](/sessions/python_one/Readme.md) - [Next](json.md)
+   [Zurück](/sessions/python_one/Readme.md) - [Weiter](json.md)
 </div>
 
 

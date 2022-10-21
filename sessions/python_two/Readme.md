@@ -1,13 +1,13 @@
-# Introduction to Python - Part II
+# Einführung in Python - Part II
 
-Python is one of the most popular programming languages of our time and the powerhouse behind most of Cisco’s API efforts. If there is a Cisco API chances are high that there will be a software development kit for that API in python. 
+Python ist eine der beliebtesten Programmiersprachen unserer Zeit und die treibende Kraft hinter den meisten API-Bemühungen von Cisco. Wenn es eine Cisco-API gibt, ist die Wahrscheinlichkeit groß, dass es ein Softwareentwicklungskit für diese API in Python gibt. 
 
-In part two of this two-parted training we will build on the basics to explore some more advanced data structures like dictionaries and sets. We will also get acquainted with some of the useful modules that come included with the python standard library.
+Im zweiten Teil dieser zweiteiligen Schulung werden wir auf den Grundlagen der letzten Sitzung aufbauen und einige fortgeschrittene Datenstrukturen wie Dictionaries erkunden. Wir werden auch einige der nützlichen Module kennenlernen, die in der Python-Standardbibliothek enthalten sind.
 
 
-So lets get started!
+Let's get started!
 
 <div align="right">
    
-   [Prev](/sessions/python_one/Readme.md) - [Next](standard_library.md)
+   [Zurück](/sessions/python_one/Readme.md) - [Weiter](standard_library.md)
 </div>

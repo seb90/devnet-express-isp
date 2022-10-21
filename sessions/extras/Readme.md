@@ -1,7 +1,6 @@
-# Additional Content
+# Zusätzlicher Inhalt
 
-Programmability, APIs and python are a vast field. Too big to be covered in just 4 hours of webinars so here you can find additional sessions on topics that we just couldn't fit into the schedule:
-
+APIs und Python sind ein weites Feld. Zu groß, um in nur 4 Stunden zu behandeln. Daher finden ihr hier zusätzliche Sitzungen zu Themen, die wir nicht in den Zeitplan einbauen konnten:
 ### REST API Fundamentals 
 
 * [REST API Theoretical Deep Dive](rest_theory/Readme.md)

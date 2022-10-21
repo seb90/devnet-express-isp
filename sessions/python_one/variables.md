@@ -1,193 +1,147 @@
-# Variables and Data types
+# Variablen und Datentypen
+Variablen sind eines der wichtigsten Elemente bei der Programmierung. 
+Variablen verhalten sich wie ein Platzhalter bzw. ein Speicher für einen 
+Wert. Und bestehen immer aus einem Namen, der einen Wert beinhalten kann.
 
-The most basic concept of every programming language are *variables*. Simply put,
-variables are placeholder for other values. For example your variable could hold 
-the number of routes that are reachable from a router or the IP address of your 
-gateway. In python variables have a name, the *variable name* that can be used 
-to refer to them and are assigned a value. 
-
-```python 
-
-a = 10
+Erstellen einer Variable und prüfen mit print:
+```python
+a = 4
 b = "Hello"
-pi = 3.14
+print(a)
+print(b)
 ```
+Damit haben wir erste Variablen initialisiert und ausgegeben! 
 
-The first time a variable is assigned we also talk about this variable being *initialized*.
-
-## Data types
-
-Values can come in many different shapes and forms. You could store a counter, which is just a whole number, or a message of the day which would be a text. These different types of data a variable can hold are also referred to as *data types*.
-
-Python knows four different *simple* or *basic* data types. 
-
-* `string` for storing text and characters
-* `int` for storing integer numbers
-* `float` for storing numbers that contain a decimal part
-* `None` for "nothing"
-
-Contrary to other programming languages python is not *statically typed*. What is behind that word you might ask? This simply means that you, as a programmer, don't have to specify what type your variable holds. The python interpreter figures this out on its own based on the value of the variable!
+## Datentypen
+Wir können verschiedene Werte in Variablen abbilden z.B. eine Zahl oder einen Text.
+Python kennt vier einfache Basis Datentypen:
+* `string` für Texte
+* `int` für ganze Zahlen
+* `float` für Dezimalzahlen
+* `None` für "nichts"
 
 ### Strings
-
-*Strings* hold everything related to text in python. You declare a string by using 
-quotation marks. Have a look at the example below:
-
+Ein String ist ein Text. Texte müssen in Anführungszeichen stehen:
 ```python
-
-text_1 = "This is a text"
-text_2 = 'We can also use single quotes to declare our text'
-
-long_text = """
-And we can have
-our text go over
-multiple lines when we use triple quotes
-"""
+text_1 = "Ich bin ein Text."
+text_2 = 'Ich bin auch ein Text.'
 ```
 
-You can also combine two strings into a new string. This is also referred to as 
-*string concatenation*. In python this is achieved by using the `+` operator.
-
+Strings lassen einfach verbinden, dazu wir das + Zeichen genutzt. Um ein Leerzeichen zwischen den beiden Elemente zu haben wird ein `" "` ein Leerzeichen in Anführungszeichen mit eingebunden:
 ```python
-
-text_1 = "I am a text."
-text_2 = "And I am also a text"
-
+text_1 = "Ich bin ein Text."
+text_2 = 'Ich bin auch ein Text.'
 text_3 = text_1 + " " + text_2
 print(text_3)
 ```
 
-As you can see in the example above, we can combine variables and a string we just declared(the `" "` whitespace in the example) into a new string.
-
-> :computer: Modify the script below so that it included your name. You will need to specify a variable called `your_name` and then assign your name to it as a `string`
-> 
+> :computer: Aufgabe: ändere das Skript so, dass dein Name ausgegeben wird:
 > ```python3
-> # You will need to add code here
-> 
+> # Hier muss Code ergänzt werden
 > print("Hello " + your_name)
 > ```
 
 <details>
-  <summary>Click here to show solution</summary>
-  
+  <summary>Lösung</summary>
+
   ```python
-  your_name = "Marcel"
+  your_name = "Sebastian"
   print("Hello " + your_name)
   ```
 </details>
 
 ### Integers
-
-*Integers* or *ints* hold everything related to whole numbers in python. You declare such a number by simply assigning it using the `=` symbol. There is no need for quotes or anything to mark it as a number. Have a look at the example below.
-
+Integers sind ganze Zahlen. Hier wird kein Anführungszeichen benötigt.
 ```python
-
 a = 10
 b = 5
 ```
 
-We can add, subtract and multiply integers using the `+`, `-` and `*` operators.
-
+Mit Zahlen können wir Rechnen
 ```python
-
 a = 10
-b = a * 5 # b is now 50
+b = a * 5  # b ist 50
 c = 10
-d = b - c # d is now 40
+d = b - c  # d ist 40
 ```
 
-We can also subtract, multiply or add a value to the variable itself. 
-
+Wir können auch mit den eigenen Werten rechnen bzw. Werte überschreiben:
 ```python
-
 a = 5
-a = a + 5 # Now a has the value 10
-a = a * 2 # Now a has the value 20
-a = a - 5 # Now a has the value 15
+a = a + 5  # a ist 10
+a = a * 2  # a ist 20
+a = a - 5  # a ist 15
 ```
 
-We can write this also with a shorthand to save us some typing:
-
-```python
-
-a = 5
-a += 5
-a *= 2
-a -= 5
-```
-
-So far we have skirted around *divisions*. Divisions can't always be whole numbers. For example 5 divided by 2 is 2.5 which is not a whole number. To hold these types of values we will need a new data type, the *floats*.
-
-> :computer: Use python to calculate the following operations:
-> * Declare a variable `a` with value 10
-> * Declare a variable `b` with value 2
-> * Declare a variable `c` that is calculated by multiplying `a` and `b`
-> * Add 10 to the variable `c`
-> * Multiply `c` with itself
+> :computer: Aufgabe: löse die folgende Aufgabe mit Python:
+* Erstelle Variable `a` mit dem Wert 10
+* Erstelle Variable `b` mit dem Wert 2
+* Erstelle Variable `c` mit dem Wert aus der Multiplikation von `a` und `b`
+* Füge 10 zur Variable `c` hinzu
+* Multipliziere `c` mit sich selbst
+* Gib das Ergebnis von `c` aus
 
 <details>
-  <summary>Click here to show solution</summary>
-  
+  <summary>Lösung</summary>
+
   ```python
-  
   a = 10
   b = 2
   c = a * b
-  c += 10 # alternative: c = c + 10
-  c *= c # alternative: c = c * c
+  c = c + 10
+  c = c * c
+  print(c)
   ```
 </details>
 
 ### Floats
-
-*Floats* hold everything related to floating or decimal numbers like 2.5 or 3.14159. floats are declared by using the `=` operator. To help python distinguish floats from integers we use the `.` to separate the whole and fractional number part. We can carry out the same operations we can with integers.
-
+Floats sind die Ergänzung zu Integers. Der Unterschied ist, ein Float muss keine ganze Zahl sein. Als Trennzeichen wird ein `.` verwendet. Hier wird ebenfalls kein Anführungszeichen benötigt.
 ```python
-
-a = 10.5 # Mind the "."
-
-a += 5
-a *= 2.33
-a = a / 2.5
+a = 10.5
+b = 5
+c = b / 2.5
 ```
 
-As you can see we can mix floats and integers when doing any calculations. Python will always choose the right variable type to fit in the value of your calculation.
-
 ### None
-
-*None* is a bit of an odd data type. What *None* represents is nothing. While it might be counter-intuitive to dedicate a entire data type to "nothing" we quite often have to represent nothing. As an example think about a piece of code that calculates the square root of a number, so the square root of 4 is 2, the square root of 9 is 3 and so. In basic mathematics it is not possible to calculate the square root of a negative number. How would your code represent that? How would you signal to someone using your code that this value is not a valid square root? You could use `0` however, 0 is a valid square root of 0. Maybe you would use `-1`? But `-1` is a valid square root of `1`. We need a data type that represents "nothing" and that is what "None" is for. 
-
+None ist ein weiterer Datentyp der "nichts" repräsentiert.
 ```python
-
 a = None
 ```
 
 ### Converting between data types
-
-Often we have to convert between one data type and another. For example when using the `print` function to print out text we can only pass a variable of type string. But what if we want to print out a number? We have to convert the number into a string. This is also referred to as a *cast* or *type cast*.
-
-To do this in python we have a variety of *cast functions*. 
-
+In Python muss oft zwischen verschiedenen Datentypen gewechselt werden. Zum Beispiel beim verwenden von `print`. Wenn wir einen Text und eine Zahl ausgeben wollen, muss die Zahl in einen String umgewandelt werden.
 ```python
-
 a = 10
-b = str(a) # Converts the integer a into a string
-c = float(a) # converts the integer a into a float
-d = int(c) # converts the float c into an integer variable
+b = str(a)  # converts int --> string
+c = float(a)  # converts int --> float
 ```
 
-> :warning: When converting a `float` to an `int` that number won't be rounded. Rather the fractional part will just be discarded. This means that, `int(3.9)` won't be `4` as would be the correct rounding but rather `3`. 
-
-Of course you can't just *cast* everything into everything. Trying to cast a text like `text_1 = "This is a text"` into a integer will result in an error. Try it out for yourself and observe the `ValueError` python will return:
-
+Mit der type Funktion können wir uns den Datentyp einer Varbiable anzeigen lassen:
 ```python
+a = 10
+b = 'Hello World'
+print('Var a is a ' + type(a))
+print('Var b is a ' + type(b))
+```
 
-text_1 = "This is a text"
-int_1 = int(text_1)
+> :warning: Beim umwandelnt eines `float` in ein `int` wird nicht gerundet, es wird nur die Kommastelle abgeschnitten.
+
+Um eine Zahl zu Runden, gibt es die Funktion `round`. Ohne Paramater wird auf 0-Stellen gerundet, mit Parameter kann angegeben werden auf wie viel Stellen gerundet werden soll:
+```python
+a = 4.6
+b = 4.21354
+c = round(a)
+d = round(b, 1)
+```
+
+Es kann nicht alles umgewandelt werden, einen Text in eine Integer führt entsprechend zu einem `ValueError` Fehler.
+```python
+text = "I am a text"
+number = int(text)
 ```
 
 <div align="right">
    
-   [Prev](Readme.md) - [Next](loops.md)
+   [Zurück](Readme.md) - [Weiter](loops.md)
 </div>
 

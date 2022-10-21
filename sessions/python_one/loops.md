@@ -1,9 +1,8 @@
-# Loops and Control Structures
+# Schleifen und Kontrollstrukturen
 
-Writing operations line by line is fine but what if we want to carry out the same operation multiple times? Let's say we want to print the sentence `Hello from python` five times. We could do it like this:
+Das Schreiben von Operationen Zeile für Zeile ist in Ordnung, aber was ist, wenn wir dieselbe Operation mehrmals ausführen wollen? Nehmen wir an, wir wollen den Satz "Hallo aus Python" fünfmal ausgeben. Wir könnten es so machen:
 
-```python
-
+```python3
 print("Hello from python")
 print("Hello from python")
 print("Hello from python")
@@ -11,101 +10,77 @@ print("Hello from python")
 print("Hello from python")
 ```
 
-You can probably tell that this is getting cumbersome when dealing with more then a trivial amount of times we want to run the code and outright impossible if we don't know the number of *iterations* before.
+Effektiv ist dies nicht.
 
-To solve this, python and all other programming languages, have the concept of *loops*. Let's first look at *for loops*.
+Um dieses hier effektiver und einfacher zu sein, haben Python und alle anderen Programmiersprachen das Konzept der *Schleifen*. Schauen wir uns zunächst die *for-Schleifen* an.
 
-## For loops
+## For Schleifen
 
-A `for loop` allows us to execute one or more instructions a certain number of times. To take the example from above:
-
-```python
-
+A `for Schleife` ermöglicht es uns, eine oder mehrere Anweisungen eine bestimmte Anzahl von Malen auszuführen. Um das Beispiel von oben zu nehmen:
+```python3
 for a in range(0, 5):
     print("Hello from python")
 ```
 
-There are a few things to consider here:
+Hier gibt es einige Dinge zu beachten:
+* wir verwenden das Schlüsselwort `for` um anzugeben, dass es sich um eine *for loop* handelt.
+* wir verwenden die `range(start, end)` Funktion, um die Anzahl der Durchläufe für die diese Schleife festzulegen. 
+* es wird nur der eingerückte Teil (die Print Anweisung) ausgeführt
 
-* We use the keyword `for` to specify that this is a *for loop*. 
-* We use the `range(start, end)` function to specify the number of *iterations* we want this loop to run for. 
-* The indented part (in this example just the line with the `print` statement) is what gets executed. python uses indentation to structure the code.
-
-> :computer: Use a for loop to print the text "Good morning!" ten times.
+> :computer: Verwenden Sie eine for-Schleife, um den Text "Guten Morgen!" zehnmal zu drucken.
 
 <details>
-  <summary>Click here to show solution</summary>
+  <summary>Lösung</summary>
   
-  ```python
-  
+  ```python3 
   for a in range(0, 10):
     print("Good morning!")
   ```
 </details>
 
-In the for loop specified above we also have a variable `a`. This does not necessarily need to be a and you can use any variable name you like. We can also use this variable in the indented part of the body. Let's have our script print out the value of the variable.
+In der oben angegebenen for-Schleife haben wir eine Variable `a`. Dies muss nicht a sein. Wir können diese Variable auch im eingerückten Teil des Textes verwenden. Lassen wir unser Skript den Wert der Variablen ausdrucken.
 
-```python
-
+```python3
 for a in range(0, 10):
     print("This is the " + str(a) + ". iteration")
 ```
 
-As you can see we start with `This is the 0. iteration` and end with `This is the 9. iteration`.
-
-Be aware that the range you specify always **excludes** the last number of you range. 
-
-> :computer: Modify the code so that it prints 
-> 
-> ```
-> This is the 1. iteration
-> This is the 2. iteration
-> This is the 3. iteration
-> This is the 4. iteration
-> This is the 5. iteration
-> ```
->
-> Pay close attention that you specify the correct range!
+> Achtung, es muss der richtige Bereich angegeben werden!
 
 <details>
-  <summary>Click here to show solution</summary>
+  <summary>Lösung</summary>
   
-  ```python
-  
+  ```python3
   for a in range(1, 6):
     print("This is the " + str(a) + ". iteration")
   ```
 </details>
 
-> :computer: Lets use this new knowledge to print out all ip addresses that are in a subnet.
+> :computer: Verwenden wir dieses neue Wissen, um alle IP-Adressen in einem Teilnetz auszudrucken.
 > 
-> Given a class C Network of `192.168.0.0/24` and a netmask of `255.255.255.0` print out all addresses that are available (including the network and broadcast address)
->
-> Remember: The variable of your for loop will be an integer. You will need to cast accordingly!
+> Bei einem Class C Netzwerk `192.168.0.0/24` mit einer Netzmaske `255.255.255.0` alle verfügbaren Adressen ausgeben (einschließlich der Netzwerk- und Broadcast-Adresse)
 
 <details>
-  <summary>Click here to show solution</summary>
+  <summary>Lösung</summary>
   
-  ```python
-  
+  ```python3
   for host_part in range(0, 256):
     ip_address = "192.168.0." + str(host_part)
     print(ip_address)
   ```
 </details>
 
-We can also have a for loop inside another for loop. This for-loopception is called *nesting*.
+Wir können auch eine for-Schleife innerhalb einer anderen for-Schleife haben. Der Vorgang nennt sich *nesting*.
 
-```python
-
+```python3
 for x in range(0, 10):
     for y in range(0, 10):
         print("Looking at pixel (" + str(x) + "," + str(y) + ")")
 ```
 
-> :computer: We can use nested for loops to print out multiplication tables. Modify the code below
+> :computer: Wir können verschachtelte for-Schleifen verwenden, um Multiplikationstabellen auszugeben. Ändere den folgenden Code
 > 
-> ```python
+> ```python3
 >  for num in range(1, 11):
 >       print("Multiplication table for " + str(num))
 >       # Use another for loop for the `multiplier` variable 
@@ -115,10 +90,8 @@ for x in range(0, 10):
 > ```
 
 <details>
-  <summary>Click here to show solution</summary>
-  
-  ```python
-    
+  <summary>Lösung</summary>
+  ```python3 
   for num in range(1, 11):
         print("Multiplication table for " + str(num))
         for multiplier in range(1, 11):
@@ -127,33 +100,30 @@ for x in range(0, 10):
   ```
 </details>
 
-## Control Structures
+## Kontroll Strukturen
 
-*If-clauses* can be used to change the program flow based on a a variable value. The instructions carried out when a *comparisson* or *condition* is met are also called a *branch*. They are again marked by indentation.
+*If-Klauseln* können verwendet werden, um den Programmablauf in Abhängigkeit von einem Variablenwert zu ändern. Die Anweisungen, die ausgeführt werden, wenn ein *Vergleich* oder eine *Bedingung* erfüllt ist, werden auch als *Verzweigung* bezeichnet. Sie sind wiederum durch Einrückung gekennzeichnet.
 
-```python
-
+```python3
 a = 10
 if a == 10:
     # This is the branch
     print("a has the value of " + str(a))
 ```
 
-In this simple example we use `if` to mark that this is now a *if-clause*. 
+In diesem Beispiel verwenden wir `if` um zu verdeutlichen, dass es sich jetzt um eine *if-clause* handelt. 
 
-The condition is then specified after that. Be aware that we are using `==` for the comparison. Remember that the `=` operator is already used for assigning variable values. 
+Die Bedingung wird dann danach angegeben. Beachten Sie, dass wir `==` für den Vergleich verwenden.
 
-We can use a number of comparison operators like 
+Wir können eine Reihe von Vergleichsoperatoren verwenden wie:
+* `a == b` to check if `a` ist gleich `b`
+* `a >= b` to check if `a` ist größer oder gleich `b` 
+* `a <= b` to check if `a` ist kleiner oder gleich `b`
+* `a%b == 0` to check if `a` kann geteilt werden durch `b` ohne einen Restbetrag
 
-* `a == b` to check if `a` is equal to `b`
-* `a >= b` to check if `a` is bigger or equal to `b` 
-* `a <= b` to check if `a` is less then or equal to b`
-* `a%b == 0` to check if `a` can be divided by `b` wihtout a remainder
+Wir können mehr als eine Bedingung haben. Um diese zusätzlichen Verzweigungen zu deklarieren, verwenden wir das Schlüsselwort `elif`. Zusätzlich können wir das Schlüsselwort `else` verwenden, um eine Verzweigung anzugeben, die ausgeführt wird, wenn keine der oben genannten Bedingungen erfüllt wurde.
 
-We can have more then one conditional. To declare these additional branches we use the `elif` keyword. Additionally we can use the `else` keyword to specify a branch that gets carried out when non of the conditions above were met
-
-```python
-
+```python3
 a = 5
 if a == 10:
     print("a is 10")
@@ -162,41 +132,39 @@ elif a == 5:
 else:
     print("a is neither 5 nor 10")
 ```
-Be advised that python stops checking after the first condition is met! So if a variable would satisfy both the first and last conditions of your if-elif-else clauses only the first one will be executed.
+Beachten Sie, dass Python nicht mehr weiter prüft, wenn die erste Bedingung erfüllt ist! 
 
-> :computer: The **FizzBuzz** test is a famous question in entry-level coding interviews. The ask is simple:
+> :computer: Der **FizzBuzz**-Test ist eine berühmte Frage in Vorstellungsgesprächen für Programmieranfänger. Die Frage ist einfach:
 > 
-> Write a program that prints the numbers from 1 to (including) 20
+> Schreibe ein Programm, das die Zahlen von 1 bis (einschließlich) 20 ausgibt:
 > 
-> * for multiples of three print **Fizz** instead of the number
-> * for multiples of five print **Buzz** instead of the number
-> * for multiples of both five and three print **FizzBuzz** instead of the number
-> * In all other cases print the number
+> * für das Vielfache von drei wird **Fizz** anstelle der Zahl gedruckt
+> * für das Vielfache von fünf wird **Buzz** anstelle der Zahl gedruckt
+> * für das Vielfache von fünf und drei wird **FizzBuzz** anstelle der Zahl ausgegeben
+> * In allen anderen Fällen geben Sie die Nummer aus.
 > 
-> Three tips: 
+> Drei Tipps: 
 > 
-> 1) To check if a number is a multiple of another number you can use this conditional:
+> 1) Um zu prüfen, ob eine Zahl ein Vielfaches einer anderen Zahl ist, können Sie diese Bedingung verwenden:
 > 
-> ```python
-> 
+> ```python3
 > a = 10
 > if a%5 == 0:
 >   print("This number is a multiple of 5")
 > ```
 >
-> 2) You can chain multiple conditions with the `and` keyword
+> 2) Mehrere Bedingungen lassen sich mit dem Schlüsselwort `and` verketten.
 > 
-> ```python
-> 
+> ```python3
 > age = 17
 > if age > 10 and age < 18:
 >   print("The person is a teenager")
 > ```
 > 
-> 3) Remember for loops? They might come in handy in this exercise.
+> 3) Erinnern Sie sich an for-Schleifen? Sie könnten sich in dieser Übung als nützlich erweisen.
 
 <details>
-  <summary>Click here to show solution</summary>
+  <summary>Lösung</summary>
   
   ```python
   
@@ -214,5 +182,5 @@ Be advised that python stops checking after the first condition is met! So if a 
 
 <div align="right">
    
-   [Prev](variables.md) - [Next](functions.md)
+   [Zurück](variables.md) - [Weiter](functions.md)
 </div>

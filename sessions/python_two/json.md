@@ -1,20 +1,18 @@
 # JSON
 
-JSON, stands for *JavaScript Object Notation* and is a popular text-based exchange format. We will learn more about the structure of JSON next week as well as during our REST API Fundamentals session. For now, let's see how we can read and write json from/to a dictionary in python.
+JSON steht für *JavaScript Object Notation* und ist ein beliebtes textbasiertes Austauschformat. Schauen wir uns zunächst an, wie wir JSON in Python lesen und schreiben können.
 
-First, we need to import the `json` module. This module is part of the standard library so you don't need to install anything!
+Zuerst müssen wir das Modul `json` importieren. Dieses Modul ist Teil der Standardbibliothek, braucht also nicht zu installiert werden.
 
-```python
-
+```python3
 import json
 ```
 
-## Turning a python dict into json
+## Umwandlung eines Python-Dict in ein json
 
-First we will need a python dictionary that we can then convert into a json string. Then we call the `json.dumps()` function. 
+Zunächst benötigen wir ein Python-Wörterbuch, das wir dann in einen json-String umwandeln können. Dann rufen wir die Funktion `json.dumps()` auf. 
 
-```python 
-
+```python3
 import json
 
 d = {}
@@ -27,14 +25,13 @@ string_representation = json.dumps(d)
 print(string_representation)
 ```
 
-`json.dumps()` takes a python dictionary and dumps it into a string.
+`json.dumps()` nimmt ein Python Dict und gibt es in eine Zeichenkette aus.
 
-## Turning a json string into a python dictionary
+## Umwandlung eines json-Strings in ein Python Dict
 
-We can also do the reverse operation and turn a (correctly formatted) json string into a python dictionary. 
+Wir können auch den umgekehrten Weg gehen und einen (korrekt formatierten) json-String in ein Python Dict umwandeln. 
 
-```python
-
+```python3
 import json
 
 json_str = """
@@ -46,11 +43,11 @@ d = json.loads(json_str)
 print(str(d))
 ```
 
-> :computer: Write a script that imports the json module and saves a dictionary as a string. The dictionary will contain the first name(dictionary key: `first_name`), last name (dictionary key: `last_name`) and age (dictionary key: `age`) of a person. The first and last name should be randomly drawn from a list of names while the age should be a random integer in the range 18 to 99.
+> :computer: Schreiben Sie ein Skript, das das json-Modul importiert und ein Wörterbuch als String speichert. Das Wörterbuch soll den Vornamen (dictionary key: `first_name`), Nachnamen (dictionary key: `last_name`) und Alter (dictionary key: `age`) einer Person enthalten. Der Vor- und Nachname sollte zufällig aus einer Namensliste gezogen werden, während das Alter eine zufällige Ganzzahl im Bereich von 18 bis 99 sein sollte.
 > 
-> You can find the list of first and last names in the code skeleton below
+> Die Liste der Vor- und Nachnamen findest du im folgenden Code-Beispiel
 > 
-> ```python
+> ```python3
 > #ToDo: imports
 >
 > first_names = ["Nadja", "Nick", "Lucy", "Howie", "Sandy", "AJ", "Vanessa", "Brian", "Jessica", "Kevin"]
@@ -67,7 +64,7 @@ print(str(d))
 > ```
 
 <details>
-  <summary>Click here to show solution</summary>
+  <summary>Lösung</summary>
   
   ```python3
   import random 
@@ -88,9 +85,9 @@ print(str(d))
   ```
 </details>
 
-With that, we have covered two modules of the standard library we will be using next week!
+Damit haben wir zwei Module der Standardbibliothek behandelt.
 
 <div align="right">
    
-   [Prev](random.md) - [Next](/sessions/rest_fundamentals/Readme.md)
+   [Zurück](standard_library.md) - [Weiter](/sessions/rest_fundamentals/Readme.md)
 </div>

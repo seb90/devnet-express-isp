@@ -1,107 +1,90 @@
-# Functions
+# Functionen
+Funktionen werden dann interessant, wenn es Teile im Code gibt, die immer wieder verwendet werden. Es könnte zwar jedes mal der Code kopiert werden, aber im Falle einer Änderung müsste diese an vielen Stellen durchgeführt werden, außerdem kann mit Funktionen viel Code gespart werden und die Übersichtlichkeit erhöht werden.
 
-Often we need to re-use part of our code. 
+#### Probleme bei Copy & Paste:
+- Änderungen müssen an jeder Stelle gemacht werden, wird ein Teil übersehen führ dies zu Fehler
 
-You might be tempted to just copy&paste the code over and over again. Let me be very clear here: **Copy&paste is never the correct answer**.
+## Functionen definieren
+Eine Funktion beschreibt einen Teil des Codes, der jederzeit aufgerufen werden kann. Python bietet von Haus aus Funktionen, die wir bereits verwendet haben. z.B. `print`.
 
-Copy&pasting code leads to many different problems but the biggest one is the clutter when changing parts. Lets say you have a piece of code that checks if your switches are still active by checking a switches `status` variable. The service you retrieve the switch status from suddenly changes the indication that this switch is still active from setting `status=ACTIVE` to `status=active`. If you have copy&pasted that piece of code you now have to change that conditional in every part you have copy&pasted the code into. This is a maintenance nightmare. 
-
-Luckily we can capsulate our code in a way that we can reuse it. That is what *functions* are for. 
-
-## Declaring functions
-
-A function is simply a piece of code that can be called. You have been **using** functions all throughout this session! `print` is a function that python provides by default and so is `range`. 
-
-Declaring your own functions is easy. We use the `def` keyword, a name and round brackets. 
+Erstellen einer ersten Funktion. Das Keyword dafür ist `def` gefolgt von einem Funktionsname, Rundenklammern und darin enthaltenen Übergabeparameter.
 
 ```python
-
-def my_first_function():
-    print("This is my first function")
+def my_function():
+    print("Hello")
 ```
 
-Everything that is indented is referred to as the *function body* and this is what gets executed when we *call* the function. 
-
-How do we call a function? By using the name!
-
+Aufrufen einer Funktion:
 ```python
 
-def my_first_function():
-    print("This is my first function")
+def my_function():
+    print("Hello")
 
-my_first_function()
+my_function()
 ```
 
-> :computer: Do it for yourself! Declare a function called `my_first_function` and have it print out the text `I am Marcel and this is my first function`. 
-> Substitute Marcel for your own name.
+> :computer: Aufgabe: Erstelle eine Funktion `say_hello` welche ausgibt `Hello NAME, nice to meet you!`. 
+> Ersetze NAME mit deinem Namen.
 
 <details>
-  <summary>Click here to show solution</summary>
+  <summary>Lösung</summary>
   
   ```python
-  
-  def my_first_function():
-    print("I am Marcel and this is my first function")
+def say_hello():
+    print("Hello Sebastian, nice to meet you!")
+
+say_hello()
   ```
 </details>
 
-## Functions with Arguments and Returns
-
-Functions can have `arguments`. These are variables that are passed into the function to modify the functions behaviour. Lets modify the function above to print the name based on a argument. 
-
+## Functions mit Parameter und Rückgaben
+Functions können Parameter `arguments` haben. Diese Werte können in der Funktion verwendet werden.
 ```python
+def say_hello(name):
+    print("Hello " + str(name) + ", nice to meet you!")
 
-def my_first_function(name):
-    print("I am " + str(name) + " and this is my first function")
-
-my_first_function("Marcel")
+say_hello('Sebastian')
 ```    
 
-We can also *return* something from a function. This can be achieved using the `return` statement. 
-
+Eine Funktion kann uns auch etwas zurück geben, dafür wird `return` verwendet:
 ```python
+def kb_to_mb(kb):
+    mb = kb / 1024
+    return mb
 
-def my_second_function(name):
-    text = "I am " + str(name) + " and this is my second function"
-
-    return text
-
-print(my_second_function("Marcel"))
+print(kb_to_mb(18271))
 ```
 
-> :computer: Write a function called `test_switch` that receives the `name` and `status` of a switch as a arguments and **returns** either "The switch switch-1 is online" or "The switch switch-1 is offline" depending on wether the status is `active` or `inactive`. The name (`switch-1` in the example) should come from the `name` argument.
-> 
-> Call the function with the name "switch-2" and the status "inactive". Save the output of that function call in a variable called `out` and print the value of that variable.
-> You can use the boilerplate code below as a starting point. You will need to change the questionmarks and fill the body
+> :computer: Aufgabe: Schreibe eine Funktion `device_status`, welche die Parameter `name` und `status` annimmt. Wenn der Status *inactive* ist soll `Device NAME is offline` ausgegeben werden, ist das Device active soll `Device NAME is online` ausgegeben werden.
+> Zusatzaufgabe: wenn keiner der Status nicht übereinstimmt soll eine entsprechende Fehlermeldung ausgegeben werden. 
 >
 > ```python
+> def device_status(???, ???):
+>   ???
+>   return ???
 > 
-> def test_switch(?, ?):
->   
->   return ?
-> out = ?
-> print(out)
+> print(device_status(???, ???))
 > ```
-> 
-> Pay close attention to which parts of the program need to be inside the function and which parts need to be outside of the function.
 
 <details>
-  <summary>Click here to show solution</summary>
+  <summary>Lösung</summary>
   
   ```python
   
-  def test_switch(name, status):
-    if status == "active":
-        return "The switch " + str(name) + " is online"
-    elif status == "inactive":
-        return "The switch " + str(name) + " is offline"
+def device_status(name, status):
+    if status == 'active':
+        return 'Device' + name + ' is online.'
+    if status == 'inactive':
+        return 'Device' + name + ' is offline.'
+    return "Error, device status for device " + name + " doesn't match."
 
-  out = test_switch("switch-2", "inactive")
-  print(out)
+
+print(device_status('SW1', 'active'))
+print(device_status('SW2', 'inactive'))
   ```
 </details>
 
 <div align="right">
    
-   [Prev](loops.md) - [Next](advanced_data_structures.md)
+   [Zurück](loops.md) - [Weiter](advanced_data_structures.md)
 </div>

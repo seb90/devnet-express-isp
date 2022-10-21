@@ -1,20 +1,19 @@
-# Cheatsheet for Python Programmability - Part 1
+# Zusammenfassung - Part 1
 
-This cheatsheet aims to provide a quick recap of all we have covered in part one of our three-part series on programmability with python. You can find the full version of the write up [here](/README.md). 
+Eine kleine Zusammenfassung von allem, was wir im ersten Teil unserer dreiteiligen Serie behandelt haben.
 
-## Variables
-[Link to Section](variables.md)
-* Variables have a name and are assigned with the `=` operator. Example: `a = 10`
-* Variables have data types that define what kind of values they hold. 
-* The data types are:
+## Variablen
+[Zum Bereich](variables.md)
+* Variablen haben einen Namen und werden mit dem `=` Operater zugewießen. Example: `a = 10`
+* Variablen haben Datentypen, die festlegen, welche Art von Werten sie enthalten.
+* Datentype:
   * `string` for text
   * `int` for whole numbers
   * `boolean` for boolean(true/false)
   * `float` for floating point numbers
   * `None` for nothing
 
-```python
-
+```python3
 an_integer = 10
 an_float = 50.0
 text = "This is a text"
@@ -22,38 +21,35 @@ an_boolean = True
 an_nothing = None
 ```
 
-* You can convert(or *cast*) between variables of different data types
+* Sie können Variablen zwischen verschiedener Datentypen konvertieren.
 
-```python
-
+```python3
 a = 10
 a_as_text = str(a)
 ```
-* The conversion functions are
+* Die Umrechnungsfunktionen sind
   * `str()` to convert to string
   * `bool()` to convert to boolean
   * `int()` to convert to integer
   * `float()` to convert to floating point number
 
-## Loops
-[Link to Section](loops.md)
-* We can use `for` loops to execute a operation multiple times
+## Schleifen
+[Zum Bereich](loops.md)
+* Wir können `for` Schleifen verwenden, um einen Vorgang mehrmals auszuführen
 
-```python
+```python3
 for a in range(0, 10):
   print("Iteration #" + str(a))
 ```
-* Mind the indention. This is the loop body that gets executed
-* The range provided is including the starting point and **excluding** the last number. This means that, for a range like `range(0, 5)`, the numbers will be `0,1,2,3,4` not including the last number 5.
+* Der angegebene Bereich schließt den Anfangspunkt ein und **schließt** die letzte Zahl aus.
 
-## Conditionals 
-[Link to Section](loops.md)
-* We can use `if` clauses to specify conditionals
-* A `if` clause has one or more conditionals that, if met, will be executed. 
-* We can have additonal conditionals (using `elif`) and a catch-all that gets executed if non of the conditionals is met (using `else`)
+## Bedingungen 
+[Zum Bereich](loops.md)
+* Wir können `if` Klauseln verwenden, um Bedingungen festzulegen
+* Eine `if` Klausel enthält eine oder mehrere Bedingungen, die, wenn sie erfüllt sind, ausgeführt werden.
+* Wir können zusätzliche Bedingungen haben (mit `elif`) nd eine Auffanglösung, die ausgeführt wird, wenn keine der Bedingungen erfüllt ist (mit `else`)
 
-```python
-
+```python3
 age = 10
 if age == 12:
   print("Age is 12")
@@ -72,29 +68,26 @@ else:
 | `a <= b`      | True if a is less of equal than b                 |
 | `a % b == 0`  | True if a can be divided by b without a remainder |
 
-## Functions
-[Link to Section](functions.md)
-* Functions allow you to encapsulate code for later re-use
+## Funktionen
+[Zum Bereich](functions.md)
+* Funktionen ermöglichen die Kapselung von Code zur späteren Wiederverwendung
 
-```python
-
+```python3
 def my_function_name():
  print("Hello!")
 ```
  
- * Functions can have one or more arguments
+ * Funktionen können ein oder mehrere Argumente haben
  
- ```python 
- 
+ ```python 3
  def my_function_name(argument_one, argument_two):
   print("Argument 1 is: " + str(argument_one))
   print("Argument 2 is: " + str(argument_two))  
 ```
 
-* Functions can return information
+* Funktionen können Informationen zurückgeben
 
-```python
-
+```python3
 def my_function(name):
  return "Hi my name is " + str(name)
 ```
