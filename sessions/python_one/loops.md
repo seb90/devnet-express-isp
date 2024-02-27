@@ -27,7 +27,7 @@ Hier gibt es einige Dinge zu beachten:
 * wir verwenden die `range(start, end)` Funktion, um die Anzahl der Durchläufe für die diese Schleife festzulegen. 
 * es wird nur der eingerückte Teil (die Print Anweisung) ausgeführt
 
-> :computer: Verwenden Sie eine for-Schleife, um den Text "Guten Morgen!" zehnmal zu drucken.
+> :computer: Verwenden Sie eine for-Schleife, um den Text "Guten Morgen!" 10x auszugeben.
 
 <details>
   <summary>Lösung</summary>
