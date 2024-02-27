@@ -1,6 +1,6 @@
 # Schleifen und Kontrollstrukturen
 
-Das Schreiben von Operationen Zeile für Zeile ist in Ordnung, aber was ist, wenn wir dieselbe Operation mehrmals ausführen wollen? Nehmen wir an, wir wollen den Satz "Hallo aus Python" fünfmal ausgeben. Wir könnten es so machen:
+Das Schreiben von Operationen, Zeile für Zeile ist in Ordnung, aber was ist, wenn wir dieselbe Operation mehrmals ausführen wollen? Nehmen wir an, wir wollen den Satz "Hallo aus Python" fünfmal ausgeben. Wir könnten es so machen:
 
 ```python3
 print("Hello from python")
