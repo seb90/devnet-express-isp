@@ -16,7 +16,7 @@ Um dieses hier effektiver und einfacher zu sein, haben Python und alle anderen P
 
 ## For Schleifen
 
-A `for Schleife` ermöglicht es uns, eine oder mehrere Anweisungen eine bestimmte Anzahl von Malen auszuführen. Um das Beispiel von oben zu nehmen:
+Eine `for Schleife` ermöglicht es uns, eine oder mehrere Anweisungen, öfter auszuführen. Um das Beispiel von oben zu nehmen:
 ```python3
 for a in range(0, 5):
     print("Hello from python")
